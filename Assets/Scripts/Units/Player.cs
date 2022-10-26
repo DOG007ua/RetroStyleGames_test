@@ -40,9 +40,14 @@ namespace Units
             _gun = transform.GetComponentInChildren<IGun>();
         }
 
-        public void Rotation(float coefSpeed)
+        public void RotationHorizontal(float coefSpeed)
         {
             transform.Rotate(0, coefSpeed * _speedRotation * Time.deltaTime, 0, Space.Self);
+        }
+        
+        public void RotationVertical(float coefSpeed)
+        {
+            transform.Rotate(coefSpeed * _speedRotation * Time.deltaTime, 0, 0, Space.Self);
         }
 
         public void Shoot()

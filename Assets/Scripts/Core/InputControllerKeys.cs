@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Core
 {
-    public class InputController : MonoBehaviour
+    public class InputControllerKeys : MonoBehaviour, IInputController
     {
         private Player _player;
         
@@ -12,7 +12,17 @@ namespace Core
         {
             _player = player;
         }
-        
+
+        public void Enable()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void Disable()
+        {
+            gameObject.SetActive(false);
+        }
+
         private void Update()
         {
             ClickMove();
@@ -21,11 +31,11 @@ namespace Core
 
         private void ClickMove()
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
                 _player.Move(1);
             }
-            else if(Input.GetKey(KeyCode.S))
+            else if(Input.GetKey(KeyCode.DownArrow))
             {
                 _player.Move(-1);
             }
@@ -35,11 +45,19 @@ namespace Core
         {
             if (Input.GetKey(KeyCode.D))
             {
-                _player.Rotation(1);
+                _player.RotationHorizontal(1);
             }
             else if(Input.GetKey(KeyCode.A))
             {
-                _player.Rotation(-1);
+                _player.RotationHorizontal(-1);
+            }
+            else if(Input.GetKey(KeyCode.W))
+            {
+                _player.RotationVertical(-1);
+            }
+            else if(Input.GetKey(KeyCode.S))
+            {
+                _player.RotationVertical(1);
             }
         }
     }
