@@ -5,7 +5,7 @@ namespace Units
 {
     public class Unit : MonoBehaviour
     {
-        public Action<GameObject> EventDead;
+        public event Action<GameObject> EventDead;
 
         public float Health
         {
@@ -27,8 +27,8 @@ namespace Units
         protected float Speed = 1;
 
         private float _hp;
-    
-        public virtual void Init()
+
+        protected virtual void Init()
         {
         
         }
@@ -42,10 +42,10 @@ namespace Units
                 Dead();   
             }
         }
-    
-        public virtual void Move(float coefSpeed)
+
+        protected virtual void Move(float coefSpeed = 1)
         {
-            
+            transform.position += transform.forward * (Speed * coefSpeed) * Time.deltaTime;
         }
 
         protected virtual void Dead()

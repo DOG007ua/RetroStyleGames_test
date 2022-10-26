@@ -1,4 +1,5 @@
 ﻿using System;
+using Units.Guns;
 using UnityEngine;
 
 namespace Units
@@ -25,8 +26,9 @@ namespace Units
 
         private float _power;
         private float _speedRotation = 1;
+        private IGun _gun;
 
-        public override void Init()
+        protected override void Init()
         {
             base.Init();
 
@@ -34,16 +36,17 @@ namespace Units
             Power = 0;
             MaxHp = 100;
             Speed = 1;
+            _gun = transform.GetComponentInChildren<IGun>();
         }
 
         public void Rotation(float coefSpeed)
         {
-            
+            transform.Rotate(0, Speed * coefSpeed * Time.deltaTime, 0, Space.Self);
         }
 
         public void Shoot()
         {
-            
+            _gun.Shoot();
         }
 
         public void UseUltimate()
