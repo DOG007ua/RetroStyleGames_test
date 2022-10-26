@@ -2282,8 +2282,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 879004280}
+  - component: {fileID: 879004281}
   m_Layer: 0
-  m_Name: InputController
+  m_Name: ManagerInputController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2306,6 +2307,20 @@ Transform:
   m_Father: {fileID: 1152916583}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &879004281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879004279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a3070613ecf4be39ac7721813069b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputControllerButtons: {fileID: 1278042722}
+  _inputControllerKeys: {fileID: 1101042682}
 --- !u!1 &887029487
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,7 +2845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1101042681
 Transform:
   m_ObjectHideFlags: 0
@@ -2887,8 +2902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf2ea6799b14f0b8b4d57f8475d14db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputControllerKeys: {fileID: 1101042682}
-  inputControllerButton: {fileID: 1278042722}
+  _managerInputController: {fileID: 879004281}
   _player: {fileID: 1375209283}
   _red: {fileID: 698978530}
   _blue: {fileID: 1614817907}
@@ -3157,7 +3171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1278042721
 Transform:
   m_ObjectHideFlags: 0
