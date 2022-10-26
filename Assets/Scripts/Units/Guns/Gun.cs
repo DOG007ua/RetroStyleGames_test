@@ -1,28 +1,31 @@
 ﻿using System;
+using DG.Tweening;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace Units.Guns
 {
-    public class Gun : IGun
+    public class Gun : MonoBehaviour, IGun
     {
         public event Action EventReadyShoot;
-        public float SecondsReload { get; }
+        public float SecondsReload { get; private set; }
 
         [SerializeField] private GameObject _bulletPrefab;
         
-        private bool _isReadyShoot = true;
+        private bool _isReadyShoot;
         
-        public Gun(float secondsReload)
+        public void Init(float secondsReload)
         {
             SecondsReload = secondsReload;
+            _isReadyShoot = true;
         }
         
         public void Shoot()
         {
             if(!_isReadyShoot)  return;
-            
-            var bullet = Object.Instantiate(_bulletPrefab);
+            Debug.Log("Shoot");
+             
+            //var bullet = Object.Instantiate(_bulletPrefab);
             
             //тут ускорение!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             
@@ -32,8 +35,13 @@ namespace Units.Guns
         private void Reload()
         {
             _isReadyShoot = false;
+            DOTween.Sequence()
+                .AppendInterval(SecondsReload)
+                .AppendCallback(FinishReload);
+        }
 
-            
+        private void FinishReload()
+        {
             _isReadyShoot = true;
             EventReadyShoot?.Invoke();
         }

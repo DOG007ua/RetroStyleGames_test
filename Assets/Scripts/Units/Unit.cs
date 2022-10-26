@@ -24,7 +24,7 @@ namespace Units
         public TypeTeam Team { get; protected set; }
 
         protected float MaxHp = 100;
-        protected float Speed = 1;
+        protected float SpeedMove = 1;
 
         private float _hp;
 
@@ -43,14 +43,16 @@ namespace Units
             }
         }
 
-        protected virtual void Move(float coefSpeed = 1)
+        public virtual void Move(float coefSpeed = 1)
         {
-            transform.position += transform.forward * (Speed * coefSpeed) * Time.deltaTime;
+            transform.position += transform.forward * (SpeedMove * coefSpeed) * Time.deltaTime;
         }
 
         protected virtual void Dead()
         {
             EventDead?.Invoke(this.gameObject);
+            
+            Destroy(this.gameObject);
         }
     
         private void Start()

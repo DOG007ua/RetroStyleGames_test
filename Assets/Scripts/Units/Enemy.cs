@@ -9,11 +9,14 @@ public class Enemy : Unit
     [SerializeField] private Collider _collider;
     protected Sequence _sequenceSpawn;
 
-    protected virtual void Init(Unit player)
+    private Vector3 _normalScale;
+
+    public virtual void Init(Unit player)
     {
         Init();
 
         _player = player;
+        _normalScale = transform.localScale;
         AnimationSpawn();
     }
 
@@ -35,7 +38,7 @@ public class Enemy : Unit
         _sequenceSpawn = DOTween.Sequence();
         _sequenceSpawn
             .AppendCallback(() => transform.localScale = Vector3.zero)
-            .AppendCallback(() => transform.DOScale(Vector3.one, 1))
+            .AppendCallback(() => transform.DOScale(_normalScale, 1))
             .OnComplete(FinishSpawn);
     }
 

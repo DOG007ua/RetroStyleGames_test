@@ -57,6 +57,8 @@
      <Compile Include="Assets\Other\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
      <Compile Include="Assets\Scripts\Units\RedUnit.cs" />
      <Compile Include="Assets\Scripts\Units\TypeTeam.cs" />
+     <Compile Include="Assets\Scripts\Core\Bootstrap.cs" />
+     <Compile Include="Assets\Scripts\Core\InputController.cs" />
      <None Include="Assets\Other\Plugins\Demigiant\DOTween\readme.txt" />
      <Reference Include="UnityEngine">
      <HintPath>F:\Programs\Unity Hub\2022.1.20f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

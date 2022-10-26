@@ -15,14 +15,15 @@ namespace Units
         [SerializeField] private IGun _gun;
         
 
-        protected override void Init(Unit player)
+        public override void Init(Unit player)
         {
             base.Init(player);
             
             Team = TypeTeam.Enemy;
             MaxHp = 100;
-            Speed = 1;
+            SpeedMove = 0.3f;
             _gun = transform.GetComponentInChildren<IGun>();
+            _gun.Init(3);
             _gun.EventReadyShoot += Shoot;
         }
 
@@ -35,7 +36,7 @@ namespace Units
             Move();
         }
 
-        protected override void Move(float coefSpeed = 1)
+        public override void Move(float coefSpeed = 1)
         {
             var isMove = !_isShoot && !_isMinDistanceToPlayer && !_isAnimationSpawn;
             
@@ -47,9 +48,10 @@ namespace Units
         {
             base.AnimationSpawn();
             
-            _sequenceSpawn.OnComplete(() => _isAnimationSpawn = false);
+            _sequenceSpawn.OnComplete(() => _isAnimationSpawn = false)
+                .AppendInterval(1)
+                .AppendCallback(Shoot);
         }
-
 
         private void CalculationMinDistanceToPlayer()
         {

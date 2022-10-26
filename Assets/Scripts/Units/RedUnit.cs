@@ -11,13 +11,13 @@ namespace Units
 
         private bool isMove = false;
 
-        protected override void Init(Unit player)
+        public override void Init(Unit player)
         {
             base.Init(player);
             
             Team = TypeTeam.Enemy;
             MaxHp = 50;
-            Speed = 1;
+            SpeedMove = 1;
             
             AnimationSpawn();
         }
@@ -41,14 +41,14 @@ namespace Units
 
         private void Jump()
         {
-            transform.DOMoveY(5, 2).OnComplete(() => isMove = true);
+            transform.DOMoveY(0.5f, 2).OnComplete(() => isMove = true);
         }
 
         private void MoveToPlayer()
         {
             Move();
             var distanceToPlayer = Vector3.Distance(Position, _player.Position);
-            
+
             if (distanceToPlayer < MinDistanceDamagePlayer)
             {
                 DamagePlayer();

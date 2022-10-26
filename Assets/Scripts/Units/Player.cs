@@ -25,7 +25,7 @@ namespace Units
         }
 
         private float _power;
-        private float _speedRotation = 1;
+        private float _speedRotation = 100;
         private IGun _gun;
 
         protected override void Init()
@@ -35,13 +35,14 @@ namespace Units
             Team = TypeTeam.Player;
             Power = 0;
             MaxHp = 100;
-            Speed = 1;
+            Health = MaxHp;
+            SpeedMove = 1;
             _gun = transform.GetComponentInChildren<IGun>();
         }
 
         public void Rotation(float coefSpeed)
         {
-            transform.Rotate(0, Speed * coefSpeed * Time.deltaTime, 0, Space.Self);
+            transform.Rotate(0, coefSpeed * _speedRotation * Time.deltaTime, 0, Space.Self);
         }
 
         public void Shoot()
@@ -55,6 +56,11 @@ namespace Units
             {
                 EventUseUltimate?.Invoke();
             }
+        }
+        
+        private void Start()
+        {
+            Init();
         }
     }
 }
