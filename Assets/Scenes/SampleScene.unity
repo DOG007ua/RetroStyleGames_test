@@ -703,6 +703,7 @@ GameObject:
   - component: {fileID: 347481083}
   - component: {fileID: 347481082}
   - component: {fileID: 347481081}
+  - component: {fileID: 347481084}
   m_Layer: 0
   m_Name: Forward
   m_TagString: Untagged
@@ -813,6 +814,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 347481079}
   m_CullTransparentMesh: 1
+--- !u!114 &347481084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347481079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1278042722}
+          m_TargetAssemblyTypeName: Core.InputControllerButtons, Assembly-CSharp
+          m_MethodName: SetMoveForward
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1278042722}
+          m_TargetAssemblyTypeName: Core.InputControllerButtons, Assembly-CSharp
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &380284965
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +871,7 @@ GameObject:
   - component: {fileID: 380284969}
   - component: {fileID: 380284968}
   - component: {fileID: 380284967}
+  - component: {fileID: 380284970}
   m_Layer: 0
   m_Name: Up
   m_TagString: Untagged
@@ -935,6 +982,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380284965}
   m_CullTransparentMesh: 1
+--- !u!114 &380284970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 380284965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1278042722}
+          m_TargetAssemblyTypeName: Core.InputControllerButtons, Assembly-CSharp
+          m_MethodName: SetRotationUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1278042722}
+          m_TargetAssemblyTypeName: Core.InputControllerButtons, Assembly-CSharp
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &444863521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,6 +1699,7 @@ GameObject:
   - component: {fileID: 544110993}
   - component: {fileID: 544110992}
   - component: {fileID: 544110991}
+  - component: {fileID: 544110994}
   m_Layer: 0
   m_Name: Back
   m_TagString: Untagged
@@ -1717,6 +1810,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544110989}
   m_CullTransparentMesh: 1
+--- !u!114 &544110994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544110989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1278042722}
+          m_TargetAssemblyTypeName: Core.InputControllerButtons, Assembly-CSharp
+          m_MethodName: SetMoveBack
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1278042722}
+          m_TargetAssemblyTypeName: Core.InputControllerButtons, Assembly-CSharp
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &698978525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,6 +1980,7 @@ GameObject:
   - component: {fileID: 762134392}
   - component: {fileID: 762134391}
   - component: {fileID: 762134390}
+  - component: {fileID: 762134393}
   m_Layer: 0
   m_Name: Right
   m_TagString: Untagged
@@ -1952,6 +2091,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762134388}
   m_CullTransparentMesh: 1
+--- !u!114 &762134393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762134388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1278042722}
+          m_TargetAssemblyTypeName: Core.InputControllerButtons, Assembly-CSharp
+          m_MethodName: SetRotationRight
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1278042722}
+          m_TargetAssemblyTypeName: Core.InputControllerButtons, Assembly-CSharp
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &821739718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2232,6 +2416,7 @@ GameObject:
   - component: {fileID: 893416850}
   - component: {fileID: 893416849}
   - component: {fileID: 893416848}
+  - component: {fileID: 893416851}
   m_Layer: 0
   m_Name: Ultimate
   m_TagString: Untagged
@@ -2342,6 +2527,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 893416846}
   m_CullTransparentMesh: 1
+--- !u!114 &893416851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893416846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1039345207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,6 +2658,7 @@ GameObject:
   - component: {fileID: 1099063897}
   - component: {fileID: 1099063896}
   - component: {fileID: 1099063895}
+  - component: {fileID: 1099063898}
   m_Layer: 0
   m_Name: Left
   m_TagString: Untagged
@@ -2562,6 +2769,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099063893}
   m_CullTransparentMesh: 1
+--- !u!114 &1099063898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099063893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1278042722}
+          m_TargetAssemblyTypeName: Core.InputControllerButtons, Assembly-CSharp
+          m_MethodName: SetRotationLeft
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1278042722}
+          m_TargetAssemblyTypeName: Core.InputControllerButtons, Assembly-CSharp
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1101042680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,6 +2823,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1101042681}
+  - component: {fileID: 1101042682}
   m_Layer: 0
   m_Name: InputControllerKeys
   m_TagString: Untagged
@@ -2593,6 +2846,18 @@ Transform:
   m_Father: {fileID: 879004280}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1101042682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101042680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62112af3504644dba0e4930d4ac5698b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1152916580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2603,7 +2868,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1152916583}
   - component: {fileID: 1152916582}
-  - component: {fileID: 1152916581}
   m_Layer: 0
   m_Name: Bootstrap
   m_TagString: Untagged
@@ -2611,18 +2875,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1152916581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152916580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62112af3504644dba0e4930d4ac5698b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1152916582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2635,7 +2887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdf2ea6799b14f0b8b4d57f8475d14db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputControllerKeys: {fileID: 1152916581}
+  inputControllerKeys: {fileID: 1101042682}
+  inputControllerButton: {fileID: 1278042722}
   _player: {fileID: 1375209283}
   _red: {fileID: 698978530}
   _blue: {fileID: 1614817907}
@@ -2897,6 +3150,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1278042721}
+  - component: {fileID: 1278042722}
   m_Layer: 0
   m_Name: InputControllerButtons
   m_TagString: Untagged
@@ -2920,6 +3174,18 @@ Transform:
   m_Father: {fileID: 879004280}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1278042722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278042720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7361b00edf6246a397ff4a72bdf084d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1328875360
 GameObject:
   m_ObjectHideFlags: 0
@@ -3585,6 +3851,7 @@ GameObject:
   - component: {fileID: 1889547573}
   - component: {fileID: 1889547572}
   - component: {fileID: 1889547571}
+  - component: {fileID: 1889547574}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Untagged
@@ -3656,7 +3923,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1889547572}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1889547572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3695,6 +3974,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1889547569}
   m_CullTransparentMesh: 1
+--- !u!114 &1889547574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889547569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &1900906735
 GameObject:
   m_ObjectHideFlags: 0
@@ -3909,6 +4209,7 @@ GameObject:
   - component: {fileID: 2081996542}
   - component: {fileID: 2081996541}
   - component: {fileID: 2081996540}
+  - component: {fileID: 2081996543}
   m_Layer: 0
   m_Name: Down
   m_TagString: Untagged
@@ -4019,6 +4320,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081996538}
   m_CullTransparentMesh: 1
+--- !u!114 &2081996543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081996538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1278042722}
+          m_TargetAssemblyTypeName: Core.InputControllerButtons, Assembly-CSharp
+          m_MethodName: SetRotationDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1278042722}
+          m_TargetAssemblyTypeName: Core.InputControllerButtons, Assembly-CSharp
+          m_MethodName: Stop
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2104083075
 GameObject:
   m_ObjectHideFlags: 0

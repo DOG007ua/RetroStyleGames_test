@@ -4,15 +4,8 @@ using UnityEngine;
 
 namespace Core
 {
-    public class InputControllerKeys : MonoBehaviour, IInputController
+    public class InputControllerKeys : InputControllerMain, IInputController
     {
-        private Player _player;
-        
-        public void Init(Player player)
-        {
-            _player = player;
-        }
-
         public void Enable()
         {
             gameObject.SetActive(true);
@@ -33,11 +26,11 @@ namespace Core
         {
             if (Input.GetKey(KeyCode.UpArrow))
             {
-                _player.Move(1);
+                MoveForward();
             }
             else if(Input.GetKey(KeyCode.DownArrow))
             {
-                _player.Move(-1);
+                MoveBack();
             }
         }
         
@@ -45,19 +38,19 @@ namespace Core
         {
             if (Input.GetKey(KeyCode.D))
             {
-                _player.RotationHorizontal(1);
+                RotationRight();
             }
             else if(Input.GetKey(KeyCode.A))
             {
-                _player.RotationHorizontal(-1);
+                RotationLeft();
             }
             else if(Input.GetKey(KeyCode.W))
             {
-                _player.RotationVertical(-1);
+                RotationUp();
             }
             else if(Input.GetKey(KeyCode.S))
             {
-                _player.RotationVertical(1);
+                RotationDown();
             }
         }
     }

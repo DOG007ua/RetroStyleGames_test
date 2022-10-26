@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\Core\InputControllerKeys.cs" />
      <Compile Include="Assets\Scripts\Core\IInputController.cs" />
      <Compile Include="Assets\Scripts\Core\InputControllerButtons.cs" />
+     <Compile Include="Assets\Scripts\Core\InputControllerMain.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
