@@ -17,7 +17,8 @@ namespace Units.Guns
         
         private void Update()
         {
-            Move();
+            _behaviorMoveBullet.Move();
+            TimeLifeBullet();
         }
         
         private void OnCollisionEnter(Collision collision)
@@ -35,6 +36,8 @@ namespace Units.Guns
             var percent = PercentNewLifeBullet();
             var randomPercent = Random.Range(0, 100);
 
+            Debug.Log($"Percent {percent}");
+            
             if (randomPercent < percent)
             {
                 NextStage();
@@ -49,7 +52,7 @@ namespace Units.Guns
         {
             var step = Random.Range(0, 2);
             var amountEnemy = ActiveUnitsSingleton.Instance.ListEnemy.Count;
-                
+
             if (step == 0 && amountEnemy > 0)
             {
                 var posInList = Random.Range(0, amountEnemy);
@@ -57,6 +60,14 @@ namespace Units.Guns
                 _behaviorMoveBullet.OnDestroy();
                 _behaviorMoveBullet = new BehaviorFollowEnemyMoveBullet(transform, Speed, enemy);
                 enemy.EventDead += DeadForwardEnemy;
+            }
+            else if(step == 0 && amountEnemy == 0)
+            {
+                Destroy(this.gameObject);
+            }
+            else if(step == 1)
+            {
+                _behaviorMoveBullet = new BehaviorForwardMoveBullet(transform, Speed);
             }
         }
 

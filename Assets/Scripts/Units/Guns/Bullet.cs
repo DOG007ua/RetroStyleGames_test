@@ -11,12 +11,6 @@ namespace Units.Guns
         {
             
         }
-        
-        protected void Move()
-        {
-            transform.position += Speed * transform.forward * Time.deltaTime;
-            
-        }
 
         protected void TimeLifeBullet()
         {
