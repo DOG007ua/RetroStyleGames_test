@@ -2,14 +2,14 @@
 using Units;
 using UnityEngine;
 
-namespace Core
+namespace Core.InputController
 {
     public class ManagerInputController : MonoBehaviour
     {
         [SerializeField] private InputControllerButtons _inputControllerButtons;
         [SerializeField] private InputControllerKeys _inputControllerKeys;
         
-        public void Init(TypeInputController typeInputController, Player player)
+        public void Init(TypeInputController typeInputController)
         {
             switch (typeInputController)
             {
@@ -17,18 +17,18 @@ namespace Core
                     break;
                 case TypeInputController.Button:
                 {
-                    SetActiveInputControllerButton(player);
+                    SetActiveInputControllerButton(ActiveUnitsSingleton.Instance.Player);
                     break;
                 }
                 case TypeInputController.Keyboard:
                 {
-                    SetActiveInputControllerKeys(player);
+                    SetActiveInputControllerKeys(ActiveUnitsSingleton.Instance.Player);
                     break;
                 }
                 case TypeInputController.ButtonKeyboard:
                 {
-                    SetActiveInputControllerButton(player);
-                    SetActiveInputControllerKeys(player);
+                    SetActiveInputControllerButton(ActiveUnitsSingleton.Instance.Player);
+                    SetActiveInputControllerKeys(ActiveUnitsSingleton.Instance.Player);
                     break;
                 }
                 default:

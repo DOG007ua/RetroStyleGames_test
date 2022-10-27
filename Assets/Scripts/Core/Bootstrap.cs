@@ -1,4 +1,5 @@
 ﻿using System;
+using Core.InputController;
 using Units;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -14,7 +15,9 @@ namespace Core
 
         private void Start()
         {
-            _managerInputController.Init(TypeInputController.ButtonKeyboard, _player);
+            ActiveUnitsSingleton.Instance.SetPlayer(_player);
+            
+            _managerInputController.Init(TypeInputController.ButtonKeyboard);
             _red.Init(_player);
             _blue.Init(_player);
         }

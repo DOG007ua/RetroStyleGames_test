@@ -1,7 +1,7 @@
 ﻿using Units;
 using UnityEngine;
 
-namespace Core
+namespace Core.InputController
 {
     public class InputControllerMain : MonoBehaviour
     {

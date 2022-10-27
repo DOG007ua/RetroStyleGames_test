@@ -1,8 +1,6 @@
-﻿using System;
-using Units;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Core
+namespace Core.InputController
 {
     public class InputControllerKeys : InputControllerMain, IInputController
     {

@@ -1,6 +1,6 @@
 ﻿using Units;
 
-namespace Core
+namespace Core.InputController
 {
     public interface IInputController
     {

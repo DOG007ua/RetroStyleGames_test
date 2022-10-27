@@ -41,15 +41,23 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Core\InputController\InputControllerButtons.cs" />
+     <Compile Include="Assets\Scripts\Core\Bootstrap.cs" />
      <Compile Include="Assets\Scripts\Units\Guns\Gun.cs" />
      <Compile Include="Assets\Other\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
      <Compile Include="Assets\Other\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
      <Compile Include="Assets\Other\Plugins\Demigiant\DOTween\Modules\DOTweenModuleEPOOutline.cs" />
      <Compile Include="Assets\Other\Plugins\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
+     <Compile Include="Assets\Scripts\Core\InputController\InputControllerKeys.cs" />
+     <Compile Include="Assets\Scripts\Core\InputController\InputControllerMain.cs" />
+     <Compile Include="Assets\Scripts\Core\InputController\ManagerInputController.cs" />
      <Compile Include="Assets\Scripts\Units\Player.cs" />
+     <Compile Include="Assets\Scripts\Core\InputController\ActiveUnitsSingleton.cs" />
      <Compile Include="Assets\Scripts\Units\Unit.cs" />
      <Compile Include="Assets\Scripts\Units\BlueUnit.cs" />
+     <Compile Include="Assets\Scripts\Core\InputController\IInputController.cs" />
      <Compile Include="Assets\Scripts\Units\Enemy.cs" />
+     <Compile Include="Assets\Scripts\Core\InputController\TypeInputController.cs" />
      <Compile Include="Assets\Other\Plugins\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
      <Compile Include="Assets\Other\Plugins\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
      <Compile Include="Assets\Scripts\Units\Guns\IGun.cs" />
@@ -57,13 +65,6 @@
      <Compile Include="Assets\Other\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
      <Compile Include="Assets\Scripts\Units\RedUnit.cs" />
      <Compile Include="Assets\Scripts\Units\TypeTeam.cs" />
-     <Compile Include="Assets\Scripts\Core\Bootstrap.cs" />
-     <Compile Include="Assets\Scripts\Core\InputControllerKeys.cs" />
-     <Compile Include="Assets\Scripts\Core\IInputController.cs" />
-     <Compile Include="Assets\Scripts\Core\InputControllerButtons.cs" />
-     <Compile Include="Assets\Scripts\Core\InputControllerMain.cs" />
-     <Compile Include="Assets\Scripts\Core\ManagerInputController.cs" />
-     <Compile Include="Assets\Scripts\Core\TypeInputController.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
