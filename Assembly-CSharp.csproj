@@ -82,6 +82,7 @@
      <Compile Include="Assets\Scripts\Units\Guns\BehaviorFollowMoveBullet.cs" />
      <Compile Include="Assets\Scripts\Units\Guns\BehaviorFollowPlayerMoveBullet.cs" />
      <Compile Include="Assets\Scripts\Units\Guns\BehaviorFollowEnemyMoveBullet.cs" />
+     <Compile Include="Assets\Scripts\Core\BorderArena.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using DG.Tweening;
 using Units.Guns;
 using UnityEngine;
 
@@ -40,6 +41,12 @@ namespace Units
             SpeedMove = 1;
             _gun = transform.GetComponentInChildren<IGun>();
             _gun.Init(1);
+        }
+
+        public void Teleport(Vector3 position)
+        {
+            EventTeleport?.Invoke();
+            transform.DOMove(position, 2);
         }
 
         public void RotationHorizontal(float coefSpeed)
