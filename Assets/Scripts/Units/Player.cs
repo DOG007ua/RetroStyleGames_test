@@ -28,7 +28,7 @@ namespace Units
         private float _speedRotation = 100;
         private IGun _gun;
 
-        protected override void Init()
+        public override void Init()
         {
             base.Init();
 

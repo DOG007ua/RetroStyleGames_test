@@ -5,7 +5,7 @@ namespace Units
 {
     public class Unit : MonoBehaviour
     {
-        public event Action<GameObject> EventDead;
+        public event Action<Unit> EventDead;
 
         public float Health
         {
@@ -28,7 +28,7 @@ namespace Units
 
         private float _hp;
 
-        protected virtual void Init()
+        public virtual void Init()
         {
         
         }
@@ -50,7 +50,7 @@ namespace Units
 
         protected virtual void Dead()
         {
-            EventDead?.Invoke(this.gameObject);
+            EventDead?.Invoke(this);
             
             Destroy(this.gameObject);
         }

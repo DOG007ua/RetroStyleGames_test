@@ -9,7 +9,7 @@ namespace Core.InputController
         public static ActiveUnitsSingleton Instance => _activeUnitsSingleton ??= new ActiveUnitsSingleton();
         
         public Player Player { get; private set; }
-        public List<Enemy> ListEnemy { get; private set; } = new List<Enemy>();
+        public List<Unit> ListEnemy { get; private set; } = new List<Unit>();
         public List<Transform> ListSpawnPoints { get; private set; } = new List<Transform>();
 
         private static ActiveUnitsSingleton _activeUnitsSingleton;
@@ -25,18 +25,20 @@ namespace Core.InputController
 
         public void AddEnemy(Enemy enemy)
         {
+            enemy.EventDead += RemoveEnemy;
             ListEnemy.Add(enemy);
         }
 
-        public void RemoveEnemy(Enemy enemy)
+        private void RemoveEnemy(Unit enemy)
         {
+            enemy.EventDead -= RemoveEnemy;
             ListEnemy.Remove(enemy);
         }
 
         public void Reset()
         {
             Player = null;
-            ListEnemy = new List<Enemy>();
+            ListEnemy = new List<Unit>();
         }
 
         public void SetSpawnPoints(List<Transform> listSpawnPoints)

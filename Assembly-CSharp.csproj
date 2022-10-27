@@ -65,6 +65,13 @@
      <Compile Include="Assets\Other\Plugins\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
      <Compile Include="Assets\Scripts\Units\RedUnit.cs" />
      <Compile Include="Assets\Scripts\Units\TypeTeam.cs" />
+     <Compile Include="Assets\Scripts\Core\Factory\TypeUnit.cs" />
+     <Compile Include="Assets\Scripts\Core\Factory\CreatorUnits.cs" />
+     <Compile Include="Assets\Scripts\Core\Factory\ICreatorTypeUnit.cs" />
+     <Compile Include="Assets\Scripts\Core\Factory\CreatorPlayerUnit.cs" />
+     <Compile Include="Assets\Scripts\Core\Factory\CreatorBlueUnit.cs" />
+     <Compile Include="Assets\Scripts\Core\Factory\CreatorRedUnit.cs" />
+     <Compile Include="Assets\Scripts\Core\Factory\DataSpawnUnits.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
