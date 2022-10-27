@@ -72,6 +72,8 @@
      <Compile Include="Assets\Scripts\Core\Factory\CreatorBlueUnit.cs" />
      <Compile Include="Assets\Scripts\Core\Factory\CreatorRedUnit.cs" />
      <Compile Include="Assets\Scripts\Core\Factory\DataSpawnUnits.cs" />
+     <Compile Include="Assets\Scripts\Core\Factory\SpawnerUnits.cs" />
+     <Compile Include="Assets\Scripts\Core\Factory\ICreatorUnits.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />

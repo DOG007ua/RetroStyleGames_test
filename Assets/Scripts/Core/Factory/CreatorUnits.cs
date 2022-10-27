@@ -3,7 +3,7 @@ using Units;
 
 namespace Core.Factory
 {
-    public class CreatorUnits
+    public class CreatorUnits : ICreatorUnits
     {
         private readonly DataSpawnUnits _dataSpawnUnits;
         private Dictionary<TypeUnit, ICreatorTypeUnit> _listCreators;
