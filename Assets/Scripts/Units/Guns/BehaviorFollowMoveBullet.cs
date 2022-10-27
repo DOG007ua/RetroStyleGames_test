@@ -54,7 +54,10 @@ namespace Units.Guns
             if (!_moveToLastPosition) return;
             
             var distance = Vector3.Distance(_transform.position, _lastPosition);
-            if(distance < 0.1f) Object.Destroy(this._transform);
+            if (distance < 0.1f)
+            {
+                Object.Destroy(_transform.gameObject);
+            }
         }
     }
 }

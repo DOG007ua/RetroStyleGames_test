@@ -61,7 +61,7 @@ namespace Core.Factory
                 else amountLastRedSpawnUnit = 0;
             }
             
-            var type = amountLastRedSpawnUnit >= 4 ? TypeUnit.Blue : TypeUnit.Red;
+            var type = amountLastRedSpawnUnit >= 1 ? TypeUnit.Blue : TypeUnit.Red;
             
             listSpawnEnemy.Add(type);
             if(listSpawnEnemy.Count > 20)   listSpawnEnemy.RemoveRange(0, 10);

@@ -31,11 +31,11 @@ namespace Core.InputController
 
         private void ClickMove()
         {
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.W))
             {
                 MoveForward();
             }
-            else if(Input.GetKey(KeyCode.DownArrow))
+            else if(Input.GetKey(KeyCode.S))
             {
                 MoveBack();
             }
@@ -51,11 +51,11 @@ namespace Core.InputController
             {
                 RotationLeft();
             }
-            else if(Input.GetKey(KeyCode.W))
+            else if(Input.GetKey(KeyCode.UpArrow))
             {
                 RotationUp();
             }
-            else if(Input.GetKey(KeyCode.S))
+            else if(Input.GetKey(KeyCode.DownArrow))
             {
                 RotationDown();
             }

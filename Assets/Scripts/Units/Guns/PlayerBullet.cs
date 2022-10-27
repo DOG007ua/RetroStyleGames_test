@@ -81,7 +81,7 @@ namespace Units.Guns
             var hp = ActiveUnitsSingleton.Instance.Player.Health;
             var maxHP = ActiveUnitsSingleton.Instance.Player.MaxHp;
             var minHP = 5;
-            var minPercent = 5;
+            var minPercent = 30;
             var maxPercent = 100;
             
             var percent =  maxHP + ((minPercent - maxPercent)/(maxHP - minHP)) * (hp - minHP);
