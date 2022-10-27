@@ -8,8 +8,9 @@ namespace Units
     {
         private const float MaxPower = 100;
 
-        public Action EventUseUltimate;
-        
+        public event Action EventUseUltimate;
+        public event Action EventTeleport;
+
         public float Power 
         {
             get

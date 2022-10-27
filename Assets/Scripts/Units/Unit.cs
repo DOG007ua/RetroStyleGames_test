@@ -23,7 +23,7 @@ namespace Units
         public Vector3 Position => transform.position;
         public TypeTeam Team { get; protected set; }
 
-        protected float MaxHp = 100;
+        public float MaxHp = 100;
         protected float SpeedMove = 1;
 
         private float _hp;

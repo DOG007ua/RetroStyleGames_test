@@ -74,6 +74,14 @@
      <Compile Include="Assets\Scripts\Core\Factory\DataSpawnUnits.cs" />
      <Compile Include="Assets\Scripts\Core\Factory\SpawnerUnits.cs" />
      <Compile Include="Assets\Scripts\Core\Factory\ICreatorUnits.cs" />
+     <Compile Include="Assets\Scripts\Units\Guns\Bullet.cs" />
+     <Compile Include="Assets\Scripts\Units\Guns\BlueBullet.cs" />
+     <Compile Include="Assets\Scripts\Units\Guns\PlayerBullet.cs" />
+     <Compile Include="Assets\Scripts\Units\Guns\IBehaviorMoveBullet.cs" />
+     <Compile Include="Assets\Scripts\Units\Guns\BehaviorForwardMoveBullet.cs" />
+     <Compile Include="Assets\Scripts\Units\Guns\BehaviorFollowMoveBullet.cs" />
+     <Compile Include="Assets\Scripts\Units\Guns\BehaviorFollowPlayerMoveBullet.cs" />
+     <Compile Include="Assets\Scripts\Units\Guns\BehaviorFollowEnemyMoveBullet.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
