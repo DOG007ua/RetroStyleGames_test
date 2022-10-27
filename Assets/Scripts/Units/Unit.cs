@@ -48,7 +48,7 @@ namespace Units
             transform.position += transform.forward * (SpeedMove * coefSpeed) * Time.deltaTime;
         }
 
-        protected virtual void Dead()
+        public virtual void Dead()
         {
             EventDead?.Invoke(this);
             

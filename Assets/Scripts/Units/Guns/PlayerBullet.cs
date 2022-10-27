@@ -25,7 +25,7 @@ namespace Units.Guns
             if(collision.transform.tag == "Enemy")
             {
                 var unit = collision.transform.GetComponent<Unit>();
-                unit.Damage(unit.Health);
+                unit.Dead();
                 HitBullet();
             }
         }

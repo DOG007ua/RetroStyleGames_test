@@ -39,7 +39,8 @@ public class Enemy : Unit
         _sequenceSpawn
             .AppendCallback(() => transform.localScale = Vector3.zero)
             .AppendCallback(() => transform.DOScale(_normalScale, 1))
-            .OnComplete(FinishSpawn);
+            .AppendInterval(1)
+            .AppendCallback(FinishSpawn);
     }
 
     private void FinishSpawn()

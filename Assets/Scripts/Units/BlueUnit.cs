@@ -12,8 +12,7 @@ namespace Units
         private bool _isMinDistanceToPlayer = false;
         private bool _isShoot = false;
         private bool _isAnimationSpawn = false;
-        [SerializeField] private IGun _gun;
-        
+        private IGun _gun;
 
         public override void Init(Unit player)
         {
