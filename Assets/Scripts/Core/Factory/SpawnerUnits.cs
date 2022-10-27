@@ -5,52 +5,63 @@ using UnityEngine;
 
 namespace Core.Factory
 {
-    public class SpawnerUnits
+    public class SpawnerUnits : MonoBehaviour
     {
-        private readonly ICreatorUnits _creatorUnits;
-        private float _timeToNextSpawn = 5;
+        [SerializeField] private Transform _parentSpawnPoints;
+        
+        private ICreatorUnits _creatorUnits;
+        private float _timeToNextSpawn = 3;
         private List<TypeUnit> listSpawnEnemy = new List<TypeUnit>();
         private Sequence _sequenceSpawn;
 
-        public SpawnerUnits(ICreatorUnits creatorUnits)
+        public void Init(ICreatorUnits creatorUnits)
         {
             _creatorUnits = creatorUnits;
+            SetSpawnPoints();
             StartScene();
         }
 
         private void StartScene()
         {
-            _sequenceSpawn = DOTween.Sequence();
-            _sequenceSpawn
-                .AppendCallback(SpawnPlayer)
+            SpawnPlayer();
+            
+            DOTween.Sequence()
                 .AppendInterval(1)
                 .AppendCallback(SpawnNextEnemy);
         }
 
+        private void SetSpawnPoints()
+        {
+            for (int i = 0; i < _parentSpawnPoints.childCount; i++)
+            {
+                ActiveUnitsSingleton.Instance.ListSpawnPoints.Add(_parentSpawnPoints.GetChild(i));
+            }
+        }
+
         private void SpawnNextEnemy()
         {
-            _timeToNextSpawn *= 0.9f;
-            if (_timeToNextSpawn < 2) _timeToNextSpawn = 2;
-
             var typeUnit = NextTypeUnit();
 
-            _sequenceSpawn
+            _sequenceSpawn = DOTween.Sequence()
                 .AppendCallback(() => SpawnEnemy(typeUnit))
                 .AppendInterval(_timeToNextSpawn)
                 .AppendCallback(SpawnNextEnemy);
+            
+            _timeToNextSpawn *= 0.95f;
+            if (_timeToNextSpawn < 2) _timeToNextSpawn = 2;
         }
 
         private TypeUnit NextTypeUnit()
         {
             var amountLastRedSpawnUnit = 0;
             
-            for (int i = 1; i < listSpawnEnemy.Count; i++)
+            foreach (var t in listSpawnEnemy)
             {
-                if (listSpawnEnemy[i - 1] == TypeUnit.Red) amountLastRedSpawnUnit++;
+                if (t == TypeUnit.Red) amountLastRedSpawnUnit++;
                 else amountLastRedSpawnUnit = 0;
             }
             
-            var type = amountLastRedSpawnUnit >= 3 ? TypeUnit.Blue : TypeUnit.Red;
+            var type = amountLastRedSpawnUnit >= 4 ? TypeUnit.Blue : TypeUnit.Red;
             
             listSpawnEnemy.Add(type);
             if(listSpawnEnemy.Count > 20)   listSpawnEnemy.RemoveRange(0, 10);
