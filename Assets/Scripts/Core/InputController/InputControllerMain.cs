@@ -41,5 +41,10 @@ namespace Core.InputController
         {
             _player.RotationVertical(1);
         }
+
+        public void Shoot()
+        {
+            _player.Shoot();
+        }
     }
 }

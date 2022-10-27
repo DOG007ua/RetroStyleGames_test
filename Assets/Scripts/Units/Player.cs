@@ -39,6 +39,7 @@ namespace Units
             Health = MaxHp;
             SpeedMove = 1;
             _gun = transform.GetComponentInChildren<IGun>();
+            _gun.Init(1);
         }
 
         public void RotationHorizontal(float coefSpeed)

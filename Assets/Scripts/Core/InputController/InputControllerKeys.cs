@@ -18,6 +18,15 @@ namespace Core.InputController
         {
             ClickMove();
             ClickRotation();
+            ClickAction();
+        }
+
+        private void ClickAction()
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Shoot();
+            }
         }
 
         private void ClickMove()

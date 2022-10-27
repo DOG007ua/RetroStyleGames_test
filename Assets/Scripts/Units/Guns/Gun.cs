@@ -11,6 +11,7 @@ namespace Units.Guns
         public float SecondsReload { get; private set; }
 
         [SerializeField] private GameObject _bulletPrefab;
+        [SerializeField] private Transform _pointSpawnBullet;
         
         private bool _isReadyShoot;
         
@@ -23,11 +24,13 @@ namespace Units.Guns
         public void Shoot()
         {
             if(!_isReadyShoot)  return;
-            Debug.Log("Shoot");
              
-            //var bullet = Object.Instantiate(_bulletPrefab);
+            var bullet = Instantiate(_bulletPrefab);
+            var bulletComponent = bullet.GetComponent<Bullet>();
+            bulletComponent.Init();
             
-            //тут ускорение!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            bullet.transform.position = _pointSpawnBullet.position;
+            bullet.transform.rotation = _pointSpawnBullet.rotation;
             
             Reload();
         }

@@ -7,6 +7,11 @@ namespace Units.Guns
         private float _time = 0;
         protected float Speed;
 
+        public virtual void Init()
+        {
+            
+        }
+        
         protected void Move()
         {
             transform.position += Speed * transform.forward * Time.deltaTime;

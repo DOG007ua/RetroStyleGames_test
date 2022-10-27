@@ -1,4 +1,5 @@
 ﻿using System;
+using Core.InputController;
 using UnityEngine;
 
 namespace Units.Guns
@@ -12,9 +13,9 @@ namespace Units.Guns
         private Player _player;
         private IBehaviorMoveBullet _behaviorMoveBullet;
         
-        public void Init(Player player)
+        public override void Init()
         {
-            _player = player;
+            _player = ActiveUnitsSingleton.Instance.Player;
             Speed = 5;
             _behaviorMoveBullet = new BehaviorFollowPlayerMoveBullet(transform, Speed, _player);
         }

@@ -9,7 +9,7 @@ namespace Units.Guns
     {
         private IBehaviorMoveBullet _behaviorMoveBullet;
 
-        public void Init()
+        public override void Init()
         {
             Speed = 5;
             _behaviorMoveBullet = new BehaviorForwardMoveBullet(transform, Speed);
