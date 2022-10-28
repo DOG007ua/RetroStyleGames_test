@@ -27,6 +27,10 @@ namespace Core.InputController
             {
                 Shoot();
             }
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                Ultimate();
+            }
         }
 
         private void ClickMove()

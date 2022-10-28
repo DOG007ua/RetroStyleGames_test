@@ -8,7 +8,6 @@ namespace Units.Guns
         private readonly Transform _bullet;
         private readonly float _speed;
 
-
         public BehaviorForwardMoveBullet(Transform bullet, float speed)
         {
             _bullet = bullet;

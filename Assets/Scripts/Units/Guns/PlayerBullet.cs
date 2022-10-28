@@ -1,5 +1,4 @@
-﻿using System;
-using Core.Factory;
+﻿using Core.Factory;
 using Core.InputController;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -37,8 +36,6 @@ namespace Units.Guns
         {
             var percent = PercentNewLifeBullet();
             var randomPercent = Random.Range(0, 100);
-
-            Debug.Log($"Percent {percent}");
             
             if (randomPercent < percent)
             {
@@ -73,11 +70,6 @@ namespace Units.Guns
             }
         }
 
-        private void DeadForwardEnemy(Unit unit)
-        {
-            unit.EventDead -= DeadForwardEnemy;
-        }
-
         private float PercentNewLifeBullet()
         {
             var hp = ActiveUnitsSingleton.Instance.Player.Health;
@@ -90,6 +82,11 @@ namespace Units.Guns
             if (percent > 100) percent = 100;
             
             return percent;
+        }
+        
+        private void DeadForwardEnemy(Unit unit)
+        {
+            unit.EventDead -= DeadForwardEnemy;
         }
 
         private void OnDestroy()

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Core.InputController;
+﻿using Core.InputController;
 using Units;
 using UnityEngine;
 
@@ -59,18 +56,6 @@ namespace Core
             }
 
             return maxDistance;
-        }
-
-        private class DataDistance
-        {
-            public float Distance;
-            public Vector3 Position;
-
-            public DataDistance(float distance, Vector3 position)
-            {
-                Distance = distance;
-                Position = position;
-            }
         }
     }
 }

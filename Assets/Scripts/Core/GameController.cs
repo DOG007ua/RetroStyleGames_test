@@ -8,8 +8,9 @@ namespace Core
 {
     public class GameController
     {
-        private Player Player => ActiveUnitsSingleton.Instance.Player;
         public event Action FinishGame;
+        
+        private Player Player => ActiveUnitsSingleton.Instance.Player;
 
         public GameController()
         {
@@ -25,10 +26,18 @@ namespace Core
 
         private void UseUltimate()
         {
-            foreach (var enemy in ActiveUnitsSingleton.Instance.ListEnemy)
+            var array = ActiveUnitsSingleton.Instance.ListEnemy.ToArray();
+            
+            for (int i = 0; i < array.Length; i++)
             {
-                enemy.Dead();
+                array[i].Dead();
             }
+        }
+
+        public void OnDestroy()
+        {
+            Player.EventDead -= DeadPlayer;
+            Player.EventUseUltimate -= UseUltimate;
         }
     }
 }

@@ -6,6 +6,8 @@ namespace Units.Guns
 {
     public abstract class BehaviorFollowMoveBullet : IBehaviorMoveBullet
     {
+        public TypeBulletKill TypeBullet => TypeBulletKill.Ricochet;
+        
         private readonly Transform _transform;
         private readonly float _speed;
         private readonly Unit _target;
@@ -18,13 +20,6 @@ namespace Units.Guns
             _speed = speed;
             _target = target;
         }
-        
-        private void Init()
-        {
-            
-        }
-
-        public TypeBulletKill TypeBullet => TypeBulletKill.Ricochet;
 
         public void Move()
         {

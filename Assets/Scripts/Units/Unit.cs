@@ -51,21 +51,10 @@ namespace Units
             transform.position += transform.forward * (SpeedMove * coefSpeed) * Time.deltaTime;
         }
 
-        public virtual void Dead()
+        public void Dead()
         {
             EventDead?.Invoke(this);
-            
             Destroy(this.gameObject);
-        }
-    
-        private void Start()
-        {
-        
-        }
-
-        private void Update()
-        {
-        
         }
     }
 }

@@ -7,11 +7,17 @@ namespace Core.Factory
 {
     public class SpawnerUnits : MonoBehaviour
     {
+        private const float DelayFirstSpawn = 1;
+        private const float MinSecondsSpawn = 2;
+        private const float CoefMinusTime = 0.95f;
+        private const float RatioRadToBlue = 4;
+        private const float SpawnMinDistanceToPlayer = 2;
+
         [SerializeField] private Transform _parentSpawnPoints;
         
+        private readonly List<TypeUnit> _listSpawnEnemy = new List<TypeUnit>();
         private ICreatorUnits _creatorUnits;
-        private float _timeToNextSpawn = 3;
-        private List<TypeUnit> listSpawnEnemy = new List<TypeUnit>();
+        private float _timeToNextSpawn = 5;
         private Sequence _sequenceSpawn;
 
         public void Init(ICreatorUnits creatorUnits)
@@ -20,13 +26,18 @@ namespace Core.Factory
             SetSpawnPoints();
             StartScene();
         }
+        
+        public void StopSpawn()
+        {
+            _sequenceSpawn.Kill();
+        }
 
         private void StartScene()
         {
             SpawnPlayer();
             
             DOTween.Sequence()
-                .AppendInterval(1)
+                .AppendInterval(DelayFirstSpawn)
                 .AppendCallback(SpawnNextEnemy);
         }
 
@@ -51,24 +62,24 @@ namespace Core.Factory
                 .AppendInterval(_timeToNextSpawn)
                 .AppendCallback(SpawnNextEnemy);
             
-            _timeToNextSpawn *= 0.95f;
-            if (_timeToNextSpawn < 2) _timeToNextSpawn = 2;
+            _timeToNextSpawn *= CoefMinusTime;
+            if (_timeToNextSpawn < MinSecondsSpawn) _timeToNextSpawn = MinSecondsSpawn;
         }
 
         private TypeUnit NextTypeUnit()
         {
             var amountLastRedSpawnUnit = 0;
             
-            foreach (var t in listSpawnEnemy)
+            foreach (var t in _listSpawnEnemy)
             {
                 if (t == TypeUnit.Red) amountLastRedSpawnUnit++;
                 else amountLastRedSpawnUnit = 0;
             }
             
-            var type = amountLastRedSpawnUnit >= 1 ? TypeUnit.Blue : TypeUnit.Red;
+            var type = amountLastRedSpawnUnit >= RatioRadToBlue ? TypeUnit.Blue : TypeUnit.Red;
             
-            listSpawnEnemy.Add(type);
-            if(listSpawnEnemy.Count > 20)   listSpawnEnemy.RemoveRange(0, 10);
+            _listSpawnEnemy.Add(type);
+            if(_listSpawnEnemy.Count > 20)   _listSpawnEnemy.RemoveRange(0, 10);
 
             return type;
         }
@@ -94,21 +105,16 @@ namespace Core.Factory
         private Vector3 GetPositionEnemy()
         {
             var distance = 0f;
-            var position = Vector3.zero;
+            Vector3 position;
             
             do
             {
                 var posInList = Random.Range(0, ActiveUnitsSingleton.Instance.ListSpawnPoints.Count);
                 position = ActiveUnitsSingleton.Instance.ListSpawnPoints[posInList].position;
                 distance = Vector3.Distance(ActiveUnitsSingleton.Instance.Player.Position, position);
-            } while (distance < 2);
+            } while (distance < SpawnMinDistanceToPlayer);
 
             return position;
-        }
-
-        public void StopSpawn()
-        {
-            _sequenceSpawn.Kill();
         }
     }
 }

@@ -4,8 +4,11 @@ namespace Units.Guns
 {
     public class Bullet : MonoBehaviour
     {
-        private float _time = 0;
+        private const float SecondsLifeBullet = 5;
+        
         protected float Speed;
+        
+        private float _time = 0;
 
         public virtual void Init()
         {
@@ -15,7 +18,7 @@ namespace Units.Guns
         protected void TimeLifeBullet()
         {
             _time += Time.deltaTime;
-            if (_time > 5)
+            if (_time > SecondsLifeBullet)
             {
                 Destroy(this.gameObject);
             }

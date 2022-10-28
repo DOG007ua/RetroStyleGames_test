@@ -16,7 +16,7 @@ namespace Core.Factory
 
         private void InitListCreators()
         {
-            _listCreators = new Dictionary<TypeUnit, ICreatorTypeUnit>()
+            _listCreators = new Dictionary<TypeUnit, ICreatorTypeUnit>
                 {
                     { TypeUnit.Player, new CreatorPlayerUnit(_dataSpawnUnits.Player) },
                     { TypeUnit.Blue, new CreatorBlueUnit(_dataSpawnUnits.Blue) },

@@ -46,5 +46,10 @@ namespace Core.InputController
         {
             _player.Shoot();
         }
+        
+        public void Ultimate()
+        {
+            _player.UseUltimate();
+        }
     }
 }

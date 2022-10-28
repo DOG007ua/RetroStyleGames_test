@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Enemy : Unit
 {
-    protected Unit _player;
-    protected bool _finishSpawn = false;
-    [SerializeField] private Collider _collider;
-    protected Sequence _sequenceSpawn;
+    protected Unit Player;
+    protected Sequence SequenceSpawn;
 
+    [SerializeField] private Collider _collider;
+    
     private Vector3 _normalScale;
+    private bool _finishSpawn = false;
 
     public virtual void Init(Unit player)
     {
         Init();
 
-        _player = player;
+        Player = player;
         _normalScale = transform.localScale;
         AnimationSpawn();
     }
@@ -27,7 +28,7 @@ public class Enemy : Unit
 
     protected void LookAtPlayer()
     {
-        transform.LookAt(_player.transform);
+        transform.LookAt(Player.transform);
     }
 
     protected virtual void AnimationSpawn()
@@ -35,8 +36,8 @@ public class Enemy : Unit
         transform.localScale = Vector3.zero;
         _collider.enabled = false;
 
-        _sequenceSpawn = DOTween.Sequence();
-        _sequenceSpawn
+        SequenceSpawn = DOTween.Sequence();
+        SequenceSpawn
             .AppendCallback(() => transform.localScale = Vector3.zero)
             .AppendCallback(() => transform.DOScale(_normalScale, 1))
             .AppendInterval(1)

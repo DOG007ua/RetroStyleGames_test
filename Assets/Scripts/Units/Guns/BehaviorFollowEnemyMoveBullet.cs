@@ -11,17 +11,16 @@ namespace Units.Guns
             _target = target;
             target.EventDead += PlayerTeleport;
         }
+        
+        public override void OnDestroy()
+        {
+            base.OnDestroy();
+            _target.EventDead -= PlayerTeleport;
+        }
 
         private void PlayerTeleport(Unit unit)
         {
             SetLastPosition();
-        }
-
-        public override void OnDestroy()
-        {
-            base.OnDestroy();
-            
-            _target.EventDead -= PlayerTeleport;
         }
     }
 }

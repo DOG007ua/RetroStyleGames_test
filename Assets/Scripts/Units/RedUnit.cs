@@ -1,6 +1,5 @@
 ﻿using Core.Factory;
 using DG.Tweening;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Units
@@ -8,7 +7,7 @@ namespace Units
     public class RedUnit : Enemy
     {
         private const float DamageValue = 15;
-        private const float MinDistanceDamagePlayer = 0.5f;
+        private const float MinDistanceDamagePlayer = 0.1f;
 
         private bool isMove = false;
 
@@ -19,7 +18,7 @@ namespace Units
             TypeUnit = TypeUnit.Red;
             Team = TypeTeam.Enemy;
             MaxHp = 50;
-            SpeedMove = 1;
+            SpeedMove = 1f;
             
             AnimationSpawn();
         }
@@ -38,7 +37,7 @@ namespace Units
         {
             base.AnimationSpawn();
             
-            _sequenceSpawn.OnComplete(Jump);
+            SequenceSpawn.OnComplete(Jump);
         }
 
         private void Jump()
@@ -49,7 +48,7 @@ namespace Units
         private void MoveToPlayer()
         {
             Move();
-            var distanceToPlayer = Vector3.Distance(Position, _player.Position);
+            var distanceToPlayer = Vector3.Distance(Position, Player.Position);
 
             if (distanceToPlayer < MinDistanceDamagePlayer)
             {
@@ -59,7 +58,7 @@ namespace Units
 
         private void DamagePlayer()
         {
-            _player.Damage(DamageValue);
+            Player.Damage(DamageValue);
             Dead();
         }
     }

@@ -1,4 +1,5 @@
-﻿using Core.Factory;
+﻿using System;
+using Core.Factory;
 using Core.InputController;
 using UnityEngine;
 
@@ -9,8 +10,8 @@ namespace Core
         [SerializeField] private ManagerInputController _managerInputController;
         [SerializeField] private DataSpawnUnits _dataSpawnUnits;
         [SerializeField] private SpawnerUnits _spawnerUnits;
-        private GameController _gameController;
         
+        private GameController _gameController;
 
         private void Start()
         {
@@ -18,6 +19,11 @@ namespace Core
             _managerInputController.Init(TypeInputController.ButtonKeyboard);
             _gameController = new GameController();
             _gameController.FinishGame += _spawnerUnits.StopSpawn;
+        }
+
+        private void OnDestroy()
+        {
+            _gameController.OnDestroy();
         }
     }
 }

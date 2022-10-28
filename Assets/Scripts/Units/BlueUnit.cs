@@ -1,5 +1,4 @@
-﻿using System;
-using Core.Factory;
+﻿using Core.Factory;
 using DG.Tweening;
 using Units.Guns;
 using UnityEngine;
@@ -8,7 +7,7 @@ namespace Units
 {
     public class BlueUnit: Enemy
     {
-        private const float MinDistanceToPlayer = 2;
+        private const float MinDistanceToPlayer = 1.5f;
         
         private bool _isMinDistanceToPlayer = false;
         private bool _isShoot = false;
@@ -49,14 +48,14 @@ namespace Units
         {
             base.AnimationSpawn();
             
-            _sequenceSpawn.OnComplete(() => _isAnimationSpawn = false)
+            SequenceSpawn.OnComplete(() => _isAnimationSpawn = false)
                 .AppendInterval(1)
                 .AppendCallback(Shoot);
         }
 
         private void CalculationMinDistanceToPlayer()
         {
-            var distanceToPlayer = Vector3.Distance(Position, _player.Position);
+            var distanceToPlayer = Vector3.Distance(Position, Player.Position);
             _isMinDistanceToPlayer = distanceToPlayer < MinDistanceToPlayer;
         }
         

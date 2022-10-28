@@ -9,7 +9,7 @@ namespace Units
     public class Player : Unit
     {
         private const float MaxPower = 100;
-
+        private const float SpeedRotation = 100;
         public event Action EventUseUltimate;
         public event Action EventTeleport;
 
@@ -29,7 +29,6 @@ namespace Units
         }
 
         private float _power;
-        private float _speedRotation = 100;
         private IGun _gun;
 
         public override void Init()
@@ -38,10 +37,10 @@ namespace Units
 
             TypeUnit = TypeUnit.Player;
             Team = TypeTeam.Player;
-            Power = 0;
-            MaxHp = 10;
+            Power = 50;
+            MaxHp = 100;
             Health = MaxHp;
-            SpeedMove = 1;
+            SpeedMove = 1.4f;
             _gun = transform.GetComponentInChildren<IGun>();
             _gun.Init(1);
         }
@@ -54,12 +53,12 @@ namespace Units
 
         public void RotationHorizontal(float coefSpeed)
         {
-            transform.Rotate(0, coefSpeed * _speedRotation * Time.deltaTime, 0, Space.Self);
+            transform.Rotate(0, coefSpeed * SpeedRotation * Time.deltaTime, 0, Space.Self);
         }
         
         public void RotationVertical(float coefSpeed)
         {
-            transform.Rotate(coefSpeed * _speedRotation * Time.deltaTime, 0, 0, Space.Self);
+            transform.Rotate(coefSpeed * SpeedRotation * Time.deltaTime, 0, 0, Space.Self);
         }
 
         public void Shoot()
@@ -69,7 +68,7 @@ namespace Units
 
         public void UseUltimate()
         {
-            if (_power >= 100)
+            if (_power >= MaxPower)
             {
                 _power = 0;
                 EventUseUltimate?.Invoke();
