@@ -39,6 +39,12 @@ namespace Core.Factory
                 KillRicochet();
             }
         }
+
+        public void Reset()
+        {
+            DeadBlue = 0;
+            DeadRed = 0;
+        }
         
         private void KillRicochet()
         {

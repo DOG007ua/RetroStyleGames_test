@@ -105,5 +105,10 @@ namespace Core.Factory
 
             return position;
         }
+
+        public void StopSpawn()
+        {
+            _sequenceSpawn.Kill();
+        }
     }
 }

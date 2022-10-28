@@ -39,7 +39,7 @@ namespace Units
             TypeUnit = TypeUnit.Player;
             Team = TypeTeam.Player;
             Power = 0;
-            MaxHp = 100;
+            MaxHp = 10;
             Health = MaxHp;
             SpeedMove = 1;
             _gun = transform.GetComponentInChildren<IGun>();
@@ -71,6 +71,7 @@ namespace Units
         {
             if (_power >= 100)
             {
+                _power = 0;
                 EventUseUltimate?.Invoke();
             }
         }
