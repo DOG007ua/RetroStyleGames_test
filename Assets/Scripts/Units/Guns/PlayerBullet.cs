@@ -1,4 +1,5 @@
 ﻿using System;
+using Core.Factory;
 using Core.InputController;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -27,6 +28,7 @@ namespace Units.Guns
             {
                 var unit = collision.transform.GetComponent<Unit>();
                 unit.Dead();
+                ReactDeadEnemySingleton.Instance.DeadEnemy(_behaviorMoveBullet.TypeBullet, unit.TypeUnit);
                 HitBullet();
             }
         }

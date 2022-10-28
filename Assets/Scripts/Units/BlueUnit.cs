@@ -1,4 +1,5 @@
 ﻿using System;
+using Core.Factory;
 using DG.Tweening;
 using Units.Guns;
 using UnityEngine;
@@ -17,7 +18,8 @@ namespace Units
         public override void Init(Unit player)
         {
             base.Init(player);
-            
+
+            TypeUnit = TypeUnit.Blue;
             Team = TypeTeam.Enemy;
             MaxHp = 100;
             SpeedMove = 0.3f;

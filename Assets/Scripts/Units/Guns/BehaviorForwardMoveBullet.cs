@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Core.Factory;
+using UnityEngine;
 
 namespace Units.Guns
 {
@@ -13,7 +14,9 @@ namespace Units.Guns
             _bullet = bullet;
             _speed = speed;
         }
-        
+
+        public TypeBulletKill TypeBullet => TypeBulletKill.Direct;
+
         public void Move()
         {
             _bullet.position += _speed * _bullet.forward * Time.deltaTime;

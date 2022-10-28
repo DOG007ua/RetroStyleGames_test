@@ -32,10 +32,14 @@ namespace Core.Factory
 
         private void SetSpawnPoints()
         {
+            var listSpawnPoints = new List<Transform>();
+            
             for (int i = 0; i < _parentSpawnPoints.childCount; i++)
             {
-                ActiveUnitsSingleton.Instance.ListSpawnPoints.Add(_parentSpawnPoints.GetChild(i));
+                listSpawnPoints.Add(_parentSpawnPoints.GetChild(i));
             }
+            
+            ActiveUnitsSingleton.Instance.SetSpawnPoints(listSpawnPoints);
         }
 
         private void SpawnNextEnemy()

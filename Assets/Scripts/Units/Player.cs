@@ -1,4 +1,5 @@
 ﻿using System;
+using Core.Factory;
 using DG.Tweening;
 using Units.Guns;
 using UnityEngine;
@@ -18,11 +19,12 @@ namespace Units
             {
                 return _power;
             }
-            protected set
+            set
             {
                 _power = value;
                 if (_power > MaxPower)
                     _power = MaxPower;
+                Debug.Log($"Power {_power}");
             }
         }
 
@@ -34,6 +36,7 @@ namespace Units
         {
             base.Init();
 
+            TypeUnit = TypeUnit.Player;
             Team = TypeTeam.Player;
             Power = 0;
             MaxHp = 100;

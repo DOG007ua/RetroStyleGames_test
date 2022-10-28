@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Core.Factory;
+using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace Units.Guns
@@ -22,7 +23,9 @@ namespace Units.Guns
         {
             
         }
-        
+
+        public TypeBulletKill TypeBullet => TypeBulletKill.Ricochet;
+
         public void Move()
         {
             _transform.position += _speed * _transform.forward * Time.deltaTime;

@@ -1,4 +1,5 @@
 using System;
+using Core.Factory;
 using UnityEngine;
 
 namespace Units
@@ -6,6 +7,7 @@ namespace Units
     public class Unit : MonoBehaviour
     {
         public event Action<Unit> EventDead;
+        public TypeUnit TypeUnit;
 
         public float Health
         {
@@ -13,11 +15,12 @@ namespace Units
             {
                 return _hp;
             }
-            protected set
+            set
             {
                 _hp = value;
                 if (_hp > MaxHp)
                     _hp = MaxHp;
+                Debug.Log($"HP {_hp}");
             }
         }
         public Vector3 Position => transform.position;
